@@ -72,3 +72,35 @@ label {
   font-weight: 600;
   color: rgb(34, 34, 34);
 }
+
+.mainPage {
+  display: flex;
+}
+
+.friendListBox {
+  display: flex;
+  align-items: baseline;
+  width: 250px;
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 5%;
+}
+
+.postListBox {
+  display: block;
+}
+
+.postBox {
+  width: 30%;
+  height: 30%;
+  border: 2px solid black;
+}
+
+.titlePost {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.bodyPost {
+  border: 1px solid black;
+}
