@@ -11,16 +11,18 @@ export default function LoginForm() {
 
     const [login, setLogin] = useState(false)
 
+    const [unknownUser, setUnknownUser] = useState(false)
+
     function handleChange(e) {
         e.preventDefault();
-        console.log('qua', email.current.value)
         setSendRequest(true);
     };
 
     function authenticate(){
         for(let i=0;i<10;i++){
             if(data[i].email === email.current.value){
-                console.log('Bentornato/a ', data[i].name)
+
+                setUnknownUser(true)
 
                 localStorage.setItem('id', data[i].id)
                 localStorage.setItem('name', data[i].name)
@@ -32,6 +34,9 @@ export default function LoginForm() {
                 // localStorage.setItem('company', data[i].company)
 
                 window.location.reload(true);
+            }
+            else { 
+                setUnknownUser(true)
             }
         }
     }
@@ -76,6 +81,8 @@ export default function LoginForm() {
                     <div className='d-grid gap-2 mt-3'>
                         <button type='submit' onClick={handleChange}>Login</button>
                     </div>
+                    <br/>
+                    {unknownUser == false ? null : <div className='uknownUser'>UTENTE NON RICONOSCIUTO...</div>}
             </div>
 
             </form>

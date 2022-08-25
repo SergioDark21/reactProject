@@ -78,29 +78,94 @@ label {
 }
 
 .friendListBox {
+  position: absolute;
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 250px;
-  height: 250px;
+  height: 300px;
   border: 1px solid black;
   border-radius: 5%;
+  margin-top: 20px;
 }
+
+.userBox {
+  position: absolute;
+  right: 20px;
+  width:170px;
+  height: 90px;
+  border: 2px solid black;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.post {
+  position: absolute;
+  right:20%;
+}
+
+.postContainer {
+  width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 
 .postListBox {
   display: block;
 }
 
 .postBox {
-  width: 30%;
-  height: 30%;
-  border: 2px solid black;
+  width: 280px;
+  border: 2px solid rgb(169, 172, 255);
+  margin-top: 20px;
+  border-radius: 15px;
+  background-color: rgba(43, 49, 204, 0.086) ;
 }
 
 .titlePost {
   font-size: 15px;
   font-weight: 700;
+  height: 70px;
+  margin:10px;
 }
 
 .bodyPost {
-  border: 1px solid black;
+  height: 220px;
+  padding:10px;
+}
+
+.authorBox {
+  position: absolute;
+  height: 30px;
+  display: flex;
+}
+
+.buttonBox {
+  margin-top:50px;
+}
+
+.button {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  margin:5px;
+}
+
+.button:hover {
+  background-color: rgb(186, 169, 169);
+  transition: all 0.3s;
+}
+
+.headerTitle {
+  margin:40px;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.uknownUser {
+  font-weight: 500;
+  color: red;
 }

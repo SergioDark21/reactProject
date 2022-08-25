@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
+let friendList = []
+
 export default function FriendList() {
 
     const [sendRequest, setSendRequest] = useState(false)
@@ -16,6 +18,11 @@ export default function FriendList() {
         })
         .then(data => {
             setData(data)
+            for(let i=0;i<10;i++){
+                if(data[i].name!==localStorage.getItem('name')){
+                    friendList.push(data[i].name)                 
+                }
+            }
         })
         .catch(error => {
             console.error("Error fetching data: ", error);
@@ -23,20 +30,16 @@ export default function FriendList() {
         })
         .finally(() => {
             setSendRequest(false)
-    
         })
     
     }, [sendRequest])
 
     return(
-        <div>
-            {data.map((user, index) => {
-                return (
-                    <div key={index}>
-                        <h2>Name: {user.name}</h2>
-                    </div>
-                )
-            })}
+        <div className='App'>
+           {[...Array(10)].map((el, i) => (
+                    <div>{friendList[i]}</div>
+                ))
+                }
         </div>
     )
 }
