@@ -1,6 +1,7 @@
 import React from 'react'
 import PostList from './PostList'
 import FriendList from './FriendList'
+import UserProfile from './UserProfile';
 
 export default function MainPage() {
 
@@ -18,6 +19,7 @@ export default function MainPage() {
                 <span>Welcome back,</span>
                 <br />
                 <span style={{fontWeight:'700'}}> {localStorage.getItem('name')}</span>
+                <br />
                 <button onClick={() => logout()}>ESCI</button>
             </div>
             <div className='friendListBox'>
